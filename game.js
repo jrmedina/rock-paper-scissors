@@ -9,6 +9,8 @@ class Game {
     console.log(this.player1.name)
     }  
     }
+    
+    
 
         // createComputer(computer) {
         // var computer = new Player()
