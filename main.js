@@ -1,23 +1,62 @@
-var alien = 5
-var lizard = 4   
-var rock = 3
-var scissors = 2
-var paper = 1
-var scissors = 2
+var game;
+// var spicyGame;
+
 var normal = [rock, paper, scissors]
-var spicy = [rock, paper, scissors, alien, lizard]
-var user = 2
+// var spicy = [rock, paper, scissors, alien, lizard]
+var user;
 
 var normalBtn = document.querySelector('#normalMode')
 var spicyBtn = document.querySelector('#spicyMode')
+var changeBtn = document.querySelector('#changeGame')
+var normalInput = document.querySelector('#userInput')
+var paper = document.querySelector('#paper')
+var rock = document.querySelector('#rock')
+var scissors = document.querySelector('#scissors')
+var userInput = document.querySelector('.user-input')
 
+window.addEventListener('load', log)
+// window.addEventListener('load', getInput)
+// paper.addEventListener('click', getInput)
+// rock.addEventListener('click', getInput)
+// scissors.addEventListener('click', getInput)
 normalBtn.addEventListener('click', normalMode)
-spicyBtn.addEventListener('click', spicyGG)
+spicyBtn.addEventListener('click', spicyMode)
+changeBtn.addEventListener('click', normalMode)
+userInput.addEventListener('click', makeSelection)
 
+function log(){
+    game = new Game()
+    // spicyGame = new Game()
+}
+    scissors = 2
+    rock = 3
+    paper = 1
+    alien = 5
+    lizard = 4   
+
+
+function makeSelection(event) {
+var choice = event.target.id
+    user = choice
+    console.log(user)
+
+}
 
 function normalMode(){
-normalGG()
-hide(spicyBtn)
+    game.gameType = 'normal'
+    toggle(spicyBtn)
+    toggle(normalBtn)
+    toggle(changeBtn)
+    toggle(normalInput)
+     console.log(game)
+
+}
+
+function spicyMode(){
+    toggle(spicyBtn)
+    toggle(normalBtn)
+    toggle(changeBtn)
+    toggle(normalInput)
 }
 
 function normalGG(){
@@ -41,19 +80,11 @@ if (user > pickComputer(spicy)) {
 }
  
 
-// function create(){
-//     var comp = new Player()
-// }
-    
 function pickComputer(array) {
   return Math.floor(Math.random() * array.length);
 };
 
-
-function show(element) {
-  element.classList.remove('hidden')
+function toggle(element) {
+  element.classList.toggle('hidden')
 };
 
-function hide(element) {
-  element.classList.add('hidden')
-};

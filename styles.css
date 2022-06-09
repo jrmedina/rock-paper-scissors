@@ -69,6 +69,12 @@ header{
     box-shadow: 4px 4px 8px 
 }
 
+
+.user-input img {  
+    height: 75%;
+    width: 32%;
+}
+
 .hidden {
     display: none;
 }

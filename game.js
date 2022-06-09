@@ -1,24 +1,19 @@
 
 class Game {
     constructor(){
-    this.player1 = new Player()
-    this.player2 = new Player()
-    this.gameType = 'spicy' || 'normal'
-    //  console.log('1', this.player1)
-    //    console.log('2', this.player2)
-    console.log(this.player1.name)
+    this.human = new Player('daveyeyey', '👨🏻‍🎨', 1111)
+    this.computer = new Player('Comp', '🤖', 21)
+    this.gameType = ''
+
+    
     }  
+    normalgame(){
+        this.gameType = 'normal'
     }
+    }
+
     
     
-
-        // createComputer(computer) {
-        // var computer = new Player()
-        // computer.name = 'computer';
-        // computer.token = '👨🏻👨🏻‍🎨';
-        // computer.wins = 1; 
-        // return computer
-
 
     // function? "A way to keep track of the data for the game board"
     //not sure what this is asking... maybe two gameType instances? rules per gameType? a sort of update?

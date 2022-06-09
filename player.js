@@ -1,9 +1,10 @@
 class Player {
-    constructor(){
-        this.name = 'human';
-        this.token = '👨🏻‍🎨';
-        this.wins = 0;
-     
+    constructor(name, token, wins){
+        this.name = name;
+        this.token = token;
+        this.wins = wins
+    }
+    takeTurn(){
     }
  
 }
