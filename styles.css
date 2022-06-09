@@ -67,8 +67,10 @@ header {
 }
 
 .user-input img {
+  border: 2px solid blue;
   height: 75%;
   width: 32%;
+
 }
 
 .hidden {
