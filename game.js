@@ -1,15 +1,10 @@
 
 class Game {
     constructor(){
-    this.human = new Player('daveyeyey', '👨🏻‍🎨', 1111)
-    this.computer = new Player('Comp', '🤖', 21)
+    this.human = new Player('Human', '👨🏻‍🎨', 0)
+    this.computer = new Player('Computer', '🤖', 0)
     this.gameType = ''
-
-    
     }  
-    normalgame(){
-        this.gameType = 'normal'
-    }
     }
 
     
