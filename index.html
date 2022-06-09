@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Monofett&family=Patrick+Hand&family=Permanent+Marker&family=Rock+Salt&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Monofett&family=Patrick+Hand&family=Permanent+Marker&family=Rock+Salt&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
-    <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="styles.css">
+  <title>Rock Paper Scissors</title>
 </head>
-    <body id="test">
-    
-        <section class="human-side">
-            <p>human.name</p>
-            <p id="humanWins"></p>
-            <button class="changeGame hidden"id="changeGame" type="button">
-                Change game?
-            </button>
-        </section>
-        
-        <section class="center">
-            <header id="header">
-                <h1>ROCK, PAPER, SCISSORS</h1>
-                <h2>Choose your fighter!</h2>
-            </header>
 
-            <section class="user-input hidden" id="userInput">
-               
-                <img id="paper"src="./assets/paper.png" alt="1">
-                <img id="rock"src="./assets/rock.png" alt="3">
-                <img id="scissors"src="./assets/scissors.png" 
-                alt="2">
-               
-                <!-- <div id="spicyMode">
+<body id="test">
+
+  <section class="human-side">
+    <p>human.name</p>
+    <p id="humanWins"></p>
+    <button class="changeGame hidden" id="changeGame" type="button">
+      Change game?
+    </button>
+  </section>
+
+  <section class="center">
+    <header id="header">
+      <h1>ROCK, PAPER, SCISSORS</h1>
+      <h2>Choose your fighter!</h2>
+    </header>
+
+    <section class="user-input hidden" id="userInput">
+
+      <img id="paper" src="./assets/paper.png" alt="1">
+      <img id="rock" src="./assets/rock.png" alt="3">
+      <img id="scissors" src="./assets/scissors.png" alt="2">
+
+      <!-- <div id="spicyMode">
                     <img id="scissors"src="./assets/scissors.png" 
                 alt="2">
                 <img id="scissors"src="./assets/scissors.png" 
@@ -43,28 +44,29 @@
                 alt="2">
                 </div> -->
 
-            </section>
+    </section>
 
-            <figure class="classic-card" id="normalMode">
-                <h2>🗿<u>CLASSIC</u>✂️</h2>
-                <p>Rock smashes scissors,
-                    Scissors cuts paper,
-                    Paper covers rock</p>
-            </figure>
-            
-            <figure class="spicy-card" id="spicyMode">
-                <h2>🔥 <u>SPICY</u> ☄️</h2>
-                <p>blah blah blah blah blah blah blah blah blah blah blah blah</p>
-            </figure>
-        </section>
+    <figure class="classic-card" id="normalMode">
+      <h2>🗿<u>CLASSIC</u>✂️</h2>
+      <p>Rock smashes scissors,
+        Scissors cuts paper,
+        Paper covers rock</p>
+    </figure>
 
-        <section class="computer-side">
-            <p>Computer 🤖</p>
-            <p id="compWins"></p>
-        </section>
-    
-    </body>
+    <figure class="spicy-card" id="spicyMode">
+      <h2>🔥 <u>SPICY</u> ☄️</h2>
+      <p>blah blah blah blah blah blah blah blah blah blah blah blah</p>
+    </figure>
+  </section>
+
+  <section class="computer-side">
+    <p>Computer 🤖</p>
+    <p id="compWins"></p>
+  </section>
+
+</body>
 <script type="text/javascript" src="./main.js"></script>
 <script type="text/javascript" src="./player.js"></script>
 <script type="text/javascript" src="./game.js"></script>
+
 </html>

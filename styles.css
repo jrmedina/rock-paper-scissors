@@ -1,80 +1,76 @@
-
-
 body {
-    background: rgb(227, 218, 215);
-    background: linear-gradient(0deg, rgba(227, 218, 215, 1) 36%, rgba(142, 14, 14, 1) 100%);
-    height: 97vh;
-    font-family: 'Gochi Hand', cursive;
-    font-size: 35px;
-    display: flex
-  
+  background: rgb(227, 218, 215);
+  background: linear-gradient(0deg, rgba(227, 218, 215, 1) 36%, rgba(142, 14, 14, 1) 100%);
+  height: 97vh;
+  font-family: 'Gochi Hand', cursive;
+  font-size: 35px;
+  display: flex
 }
 
 .human-side {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7679665616246498) 58%, rgba(142, 14, 14, 1) 100%);
-    text-align: center;
-    width: 20%;
-    justify-content: left;
-    font-size: 35px;
-    border-radius: 5%;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7679665616246498) 58%, rgba(142, 14, 14, 1) 100%);
+  text-align: center;
+  width: 20%;
+  justify-content: left;
+  font-size: 35px;
+  border-radius: 5%;
 }
 
 .computer-side {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7679665616246498) 58%, rgba(142, 14, 14, 1) 100%);
-    text-align: center;
-    width: 20%;
-    justify-content: right;
-    font-size: 33px;
-    border-radius: 5%;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7679665616246498) 58%, rgba(142, 14, 14, 1) 100%);
+  text-align: center;
+  width: 20%;
+  justify-content: right;
+  font-size: 33px;
+  border-radius: 5%;
 }
 
 .center {
-    width: 65%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-bottom: 40%;    
+  width: 65%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 40%;
 }
 
 figure {
-    background-color: aliceblue;
-    width: 40%;
-    height: 30%;
-    border-radius: 20%;
-    font-size: 20px;  
-    cursor: pointer; 
+  background-color: aliceblue;
+  width: 40%;
+  height: 30%;
+  border-radius: 20%;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-figure:hover{
-    box-shadow: 4px 4px 8px
+figure:hover {
+  box-shadow: 4px 4px 8px
 }
 
-header{
-    font-size: 38px;
+header {
+  font-size: 38px;
 }
 
 #changeGame {
-    font-family: 'Gochi Hand', cursive;
-    font-size: 38px;
-    height: 15%;
-    width: 60%;
-    cursor: pointer;
-    border-radius: 20%; 
+  font-family: 'Gochi Hand', cursive;
+  font-size: 38px;
+  height: 15%;
+  width: 60%;
+  cursor: pointer;
+  border-radius: 20%;
 }
 
 #changeGame:hover {
-    box-shadow: 4px 4px 8px 
+  box-shadow: 4px 4px 8px
 }
 
-
-.user-input img {  
-    height: 75%;
-    width: 32%;
+.user-input img {
+  height: 75%;
+  width: 32%;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
