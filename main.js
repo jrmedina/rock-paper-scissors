@@ -1,9 +1,6 @@
-var game;
-var user;
-var computer;
-
+var game ;
 var normal = ["rock", "paper", "scissors"]
-// var spicy = [rock, paper, scissors, alien, lizard]
+var spicy = ["rock", "paper", "scissors", "lizard", "alien"]
 
 var normalBtn = document.querySelector('#normalMode')
 var spicyBtn = document.querySelector('#spicyMode')
@@ -11,68 +8,70 @@ var changeBtn = document.querySelector('#changeGame')
 var normalInput = document.querySelector('#userInput')
 var humanWinCount = document.querySelector('#humanWins')
 var computerWinCount = document.querySelector('#compWins')
-// var header = document.querySelector('#header')
+var spicyOptions = document.querySelector('.spicy')
 
 window.addEventListener('load', loadGame)
-normalBtn.addEventListener('click', normalMode)
+normalBtn.addEventListener('click', displayNorm)
 spicyBtn.addEventListener('click', spicyMode)
 changeBtn.addEventListener('click', normalMode)
-userInput.addEventListener('click', assignHuman)
-
+userInput.addEventListener('click', startGame)
 
 function loadGame() {
   game = new Game()
 }
 
-function assignHuman(event){
-  for (var i = 0; i < normal.length; i++){
-    if (event.target.id === normal[i]){
-      user = normal[i]
-    } 
-}
-assignComputer()
-startNormalGame()
-}
-
-function assignComputer() {
-  computer = normal[generatePick(normal)];
-}
-
-function normalMode() {
+function displayNorm() {
+  game.gameType = "normal"
   toggle(spicyBtn)
   toggle(normalBtn)
   toggle(changeBtn)
   toggle(normalInput)
+  startGame(event)
 }
 
 function spicyMode() {
+  game.gameType = "spicy"
   toggle(spicyBtn)
   toggle(normalBtn)
   toggle(changeBtn)
   toggle(normalInput)
+  toggle(spicyOptions)
+  startGame(event)
 }
 
-
-function startNormalGame() {
-      game.gameType = 'Normal!'
-  if (user === "rock" && computer === "scissors" ) {
-    game.human.wins++
-    console.log("U:",user, "C:",computer)
-  } else if (user === "paper" && computer ==="rock") {
-      game.human.wins++
-      console.log("U:",user, "C:",computer)
-  } else if (user === "scissors" && computer === "paper") {
-    game.human.wins++
-   console.log("U:",user, "C:",computer)
-  } else if  (user === computer){
-   console.log("U:",user, "C:",computer)
-      console.log("DRAW!")
-  } else {
-   console.log("U:",user, "C:",computer)
-    game.computer.wins++ 
+function startGame(event){
+   for (var i = 0; i < spicy.length; i++){
+     if (spicy[i] === event.target.id){
+     this.choice = spicy[i]
+     console.log(this.choice)
+}
   }
-  update()
-}
+  
+  }
+
+
+
+
+// function startNormalGame() {
+//       game.gameType = 'Normal!'
+//   if (user === "rock" && computer === "scissors" ) {
+//     game.human.wins++
+//     console.log("U:",user, "C:",computer)
+//   } else if (user === "paper" && computer ==="rock") {
+//       game.human.wins++
+//       console.log("U:",user, "C:",computer)
+//   } else if (user === "scissors" && computer === "paper") {
+//     game.human.wins++
+//    console.log("U:",user, "C:",computer)
+//   } else if  (user === computer){
+//    console.log("U:",user, "C:",computer)
+//       console.log("DRAW!")
+//   } else {
+//    console.log("U:",user, "C:",computer)
+//     game.computer.wins++ 
+//   }
+//   update()
+// }
 
 function update() {
   humanWinCount.innerText = `Wins: ${game.human.wins}`
@@ -86,6 +85,7 @@ function generatePick(array) {
 function toggle(element) {
   element.classList.toggle('hidden')
 };
+
 
 // function startNormalGame() {
 //       game.gameType = 'Normal!'
@@ -123,36 +123,6 @@ function toggle(element) {
 //   }
 // }
 
-// function assign(event) {
-//   console.log(event.target.id)
-// if ("paper" == event.target.id) {
-//   user = 0
-//   console.log(user)
-// } else if ("scissors" === event.target.id){
-//   user = 1
-//   console.log(user)
-// } else if ("rock" === event.target.id) {
-//   user = 2
-//   console.log(user)
-// }
-// startNormalGame()
-// }
-
-// function assignPaper(){
-//     user = 0
-//     console.log(user)
-//     startNormalGame()
-// }
-// function assignRock(){
-//     user = 2
-//     console.log(user)
-//     startNormalGame()
-// }
-// function assignScissors(){
-//     user = 1
-//      console.log(user)
-//      startNormalGame()
-// }
 
 
 // refactor: use a foor loop to assign a value from pics > array position
