@@ -1,10 +1,40 @@
+
 class Game {
   constructor() {
-    this.human = new Player('Human', '👨🏻‍🎨', 0)
-    this.computer = new Player('Computer', '🤖', 0)
-    this.gameType = ''
+    this.human = new Player()
+    this.cpu = new Player("Computer", "")
+    this.gameType = "normal" || "spicy"
+  }
+//if "normal" set these conditions, if spicy set these
+  game() { 
+// rock - lizard, scissors
+// scissors - paper, lizard
+// alien - rock, scissors
+// lizard - paper, spock
+// paper - spock, rock
+  if (this.human.choice === "rock" && this.cpu.choice === "scissors" || "lizard") {
+      this.human.wins++
+  }if (this.human.choice === "paper" && this.cpu.choice === "rock" || "alien") {
+      this.human.wins++
+  }if (this.human.choice === "scissors" && this.cpu.choice === "paper" || "lizard") {
+    this.human.wins++
+  }if (this.human.choice === "lizard" && this.cpu.choice === "paper" || "alien") {
+    this.human.wins++
+  }if (this.human.choice === "alien" && this.cpu.choice === "rock" || "scissors") {
+    this.human.wins++
+  }if (this.human.choice === this.cpu.choice){
+      console.log("DRAW!")
+  }else {
+    this.computer.wins++ 
   }
 }
+
+//draw() own function
+
+  
+}
+ 
+
 
 
 

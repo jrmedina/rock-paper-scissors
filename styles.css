@@ -33,8 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: 40%;
-}
+  }
 
 figure {
   background-color: aliceblue;
@@ -50,7 +49,8 @@ figure:hover {
 }
 
 header {
-  font-size: 38px;
+  font-size: 80%;
+  height: 20%;
 }
 
 #changeGame {
@@ -66,13 +66,22 @@ header {
   box-shadow: 4px 4px 8px
 }
 
-.user-input img {
-  border: 2px solid blue;
-  height: 75%;
-  width: 32%;
+.user-input{
+  border: 2px solid green;
+  height: 80%;
+  width: 100%;
 
 }
 
+img {
+  border: 2px solid blue;
+  height: 30%;
+ 
+}
+
+.spicy{
+    height: 30%;
+}
 .hidden {
   display: none;
 }
