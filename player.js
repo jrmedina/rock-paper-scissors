@@ -5,13 +5,13 @@ class Player {
     this.wins = 0
     this.choice = ''
   }
-
+  
   takeTurn() {
     if (game.gameType ===  "normal") {
-    game.computer.choice = normal[generatePick(normal)]
-    } if (game.gameType ===  "spicy") 
-    game.computer.choice = spicy[generatePick(spicy)]
+    game.cpu.choice = normal[generatePick(normal)]
+    } else if (game.gameType ===  "spicy") {
+    game.cpu.choice = spicy[generatePick(spicy)]       
     }
+     game.game()
   }
-
-  
+}

@@ -1,43 +1,59 @@
 
 class Game {
   constructor() {
-    this.human = new Player()
-    this.cpu = new Player("Computer", "")
+    this.human = new Player("Human", "👨🏻‍🎨")
+    this.cpu = new Player("Computer", "🤖")
     this.gameType = "normal" || "spicy"
+    this.victory = ''
+
   }
-//if "normal" set these conditions, if spicy set these
-  game() { 
-// rock - lizard, scissors
-// scissors - paper, lizard
-// alien - rock, scissors
-// lizard - paper, spock
-// paper - spock, rock
-  if (this.human.choice === "rock" && this.cpu.choice === "scissors" || "lizard") {
-      this.human.wins++
-  }if (this.human.choice === "paper" && this.cpu.choice === "rock" || "alien") {
-      this.human.wins++
-  }if (this.human.choice === "scissors" && this.cpu.choice === "paper" || "lizard") {
-    this.human.wins++
-  }if (this.human.choice === "lizard" && this.cpu.choice === "paper" || "alien") {
-    this.human.wins++
-  }if (this.human.choice === "alien" && this.cpu.choice === "rock" || "scissors") {
-    this.human.wins++
+
+game() { 
+  if (this.human.choice === "rock" && this.cpu.choice === "scissors" ||
+  this.human.choice === "rock" && this.cpu.choice === "lizard") {
+   return game.victory = 'human'
+  }if (this.human.choice === "paper" && this.cpu.choice === "rock" ||
+  this.human.choice === "paper" && this.cpu.choice === "alien") {
+   return game.victory = 'human'
+  }if (this.human.choice === "scissors" && this.cpu.choice === "paper" ||
+  this.human.choice === "scissors" && this.cpu.choice === "lizard") {
+   return  game.victory = 'human'
+  }if (this.human.choice === "lizard" && this.cpu.choice === "paper" ||
+  this.human.choice === "lizard" && this.cpu.choice === "alien") {
+    return  game.victory = 'human'
+  }if (this.human.choice === "alien" && this.cpu.choice === "rock" ||
+  this.human.choice === "alien" && this.cpu.choice === "scissors") {
+    return  game.victory = 'human'
   }if (this.human.choice === this.cpu.choice){
       console.log("DRAW!")
+     return   game.victory = 'DRAW'
   }else {
-    this.computer.wins++ 
+    return  game.victory = 'comp'
   }
 }
 
-//draw() own function
-
-  
 }
+
+// if(( this.human.choice === "alien"||"rock" && this.cpu.choice === "paper")||
+// ( this.human.choice === "paper"||"alien" && this.cpu.choice === "lizard")||
+//  ( this.human.choice === "rock"||"scissors" && this.cpu.choice === "alien")||
+//  ( this.human.choice === "paper"||"lizard" && this.cpu.choice === "scissors")||
+//  ( this.human.choice === "lizard"||"scissors" && this.cpu.choice === "rock")) {
+//   console.log(game.victory)
+//  return game.victory = 'comp'
+//  } else if (this.human.choice === this.cpu.choice){
+//     console.log("DRAW!")
+//      return   game.victory = ''
+//  }
+// else {
+// console.log(game.victory)
+// return game.victory = 'human'
+// }
+
+
+
  
-
-
-
-
+ 
 
 // function? "A way to keep track of the data for the game board"
 //not sure what this is asking... maybe two gameType instances? rules per gameType? a sort of update?
@@ -57,3 +73,5 @@ class Game {
 //A way to reset the Game’s board to begin a new game
 //a potential refresh button that will start the entire screen over... almost like a window.load - aesthetics
 //another instances that will set the "Player()" back to default, "gameType" back to undefined
+
+
