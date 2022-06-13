@@ -1,20 +1,20 @@
 var game;
-var normal = ["rock", "paper", "scissors"]
-var spicy = ["rock", "paper", "scissors", "lizard", "alien"]
+var normal = ['rock', 'paper', 'scissors']
+var spicy = ['rock', 'paper', 'scissors', 'lizard', 'alien']
 
+var changeBtn = document.querySelector('#changeGame')
 var normalBtn = document.querySelector('#normalMode')
 var spicyBtn = document.querySelector('#spicyMode')
-var changeBtn = document.querySelector('#changeGame')
-var normalInput = document.querySelector('#userInput')
+var header = document.querySelector('#header')
 var humanWinCount = document.querySelector('#humanWins')
 var computerWinCount = document.querySelector('#compWins')
+var userInput = document.querySelector('#userInput')
 var spicyOptions = document.querySelector('.spicy')
-var fighter = document.querySelector('#header')
 
 window.addEventListener('load', loadGame)
+changeBtn.addEventListener('click', displayHome)
 normalBtn.addEventListener('click', displayNorm)
 spicyBtn.addEventListener('click', displaySpicy)
-changeBtn.addEventListener('click', home)
 userInput.addEventListener('click', runGame)
 
 function loadGame() {
@@ -31,68 +31,62 @@ function runGame(event) {
   game.checkForWinner()
   game.checkForDraw()
   game.tallyWin()
-  displayWins()
+  displayFight()
   setTimeout(reset, 3000)
-};
+}
 
-function displayWins() {
-  toggle(normalInput)
+function displayFight() {
+  toggle(userInput)
   humanWinCount.innerText = `Wins: ${game.human.wins}`
   computerWinCount.innerText = `Wins: ${game.cpu.wins}`
-  fightScreen.innerHTML = `<img src="./assets/${game.human.choice}.png" alt="${game.human.choice}"></img>
-  <img src="./assets/${game.cpu.choice}.png" alt="${game.cpu.choice}"></img>`
-
-
-  if (game.victory === 'human') {
-    return fighter.innerText = `U:${game.human.choice} beats C:${game.cpu.choice}`
-  } else if (game.victory === 'comp') {
-    return fighter.innerText = `U:${game.human.choice} loses to C:${game.cpu.choice}`
-  } else if (game.victory === ''){
-    return fighter.innerText = `DRAWWWWWWW!`
+  fightScreen.innerHTML =
+    `<img src="./assets/${game.human.choice}.png" alt="${game.human.choice}"></img>
+    <img src="./assets/${game.cpu.choice}.png" alt="${game.cpu.choice}"></img>`
+  if (game.winner === `human`) {
+    return header.innerText = `${game.human.choice} beats ${game.cpu.choice}...`
+  } else if (game.winner === `cpu`) {
+    return header.innerText = `${game.human.choice} loses to ${game.cpu.choice}...`
+  } else if (game.winner === ``){
+    return header.innerText = `DRAW! Try Again?`
   }
-
 }
 
 function reset() {
-  fighter.innerText = `Choose Your Fighter!`
+  header.innerText = `Choose Your Fighter!`
   fightScreen.innerHTML = ``
-  toggle(normalInput)
+  toggle(userInput)
 }
 
-function home() {
+function displayHome () {
   toggle(spicyBtn)
   toggle(normalBtn)
   toggle(changeBtn)
-  toggle(normalInput)
+  toggle(userInput)
 }
 
 function displayNorm() {
-  game.gameType = "normal"
-  fighter.innerText = `Choose Your Fighter!`
+  game.gameType = `normal`
+  header.innerText = `Choose Your Fighter!`
   toggle(spicyBtn)
   toggle(normalBtn)
   toggle(changeBtn)
-  toggle(normalInput)
+  toggle(userInput)
 }
 
 function displaySpicy() {
-  game.gameType = "spicy"
-  fighter.innerText = `Choose Your Fighter!`
+  game.gameType = `spicy`
+  header.innerText = `Choose Your Fighter!`
   toggle(spicyBtn)
   toggle(normalBtn)
   toggle(changeBtn)
-  toggle(normalInput)
+  toggle(userInput)
   toggle(spicyOptions)
 }
 
 function generatePick(array) {
   return Math.floor(Math.random() * array.length);
-};
+}
 
 function toggle(element) {
-  element.classList.toggle('hidden')
-};
-
-function generatePick(array) {
-  return Math.floor(Math.random() * array.length);
-};
+  element.classList.toggle(`hidden`)
+}

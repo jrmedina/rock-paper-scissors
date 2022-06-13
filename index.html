@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,29 +7,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Monofett&family=Patrick+Hand&family=Permanent+Marker&family=Rock+Salt&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
-  <title>Rock Paper Scissors</title>
+  <title>🗿Rock📜Paper✂️Scissors</title>
 </head>
-
 <body>
-
   <section class="human-side">
-    <p>human.name</p>
+    <p>Human</p>
     <p id="humanWins"></p>
     <button class="changeGame hidden" id="changeGame" type="button">
       Change game?
     </button>
   </section>
-
   <section class="center">
     <header>
       <h1>ROCK, PAPER, SCISSORS</h1>
       <h2 id="header">Choose Your Game!</h2>
     </header>
-
     <section class="user-input hidden" id="userInput">
-
       <img id="paper" src="./assets/paper.png" alt="paper">
       <img id="rock" src="./assets/rock.png" alt="rock">
       <img id="scissors" src="./assets/scissors.png" alt="scissors">
@@ -39,27 +32,27 @@
       <img id="lizard"src="./assets/lizard.png" alt="lizard">
     </div>
     </section>
-
     <section id="fightScreen"></section>
-
-    <figure class="classic-card" id="normalMode">
+    <figure id="normalMode">
       <h2>🗿<u>CLASSIC</u>✂️</h2>
-      <p>Rock smashes scissors,
-        Scissors cuts paper,
-        Paper covers rock</p>
+      <p>Rock smashes Scissors,<br>
+        Scissors cuts Paper,<br>
+        Paper covers Rock</p>
     </figure>
-
-    <figure class="spicy-card" id="spicyMode">
+    <figure id="spicyMode">
       <h2>🔥 <u>SPICY</u> ☄️</h2>
-      <p>blah blah blah blah blah blah blah blah blah blah blah blah</p>
+      <p>Rock smashes Scissors,<br>
+        Scissors cuts Paper,<br>
+        Paper covers Rock, <br>
+        Lizard eats Paper & poisons Alien,<br>
+        Alien vaporizes Rock & Scissors
+      </p>
     </figure>
   </section>
-
   <section class="computer-side">
     <p>Computer 🤖</p>
     <p id="compWins"></p>
   </section>
-
 </body>
 <script type="text/javascript" src="./player.js"></script>
 <script type="text/javascript" src="./game.js"></script>
