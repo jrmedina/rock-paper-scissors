@@ -33,7 +33,18 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  }
+}
+
+.user-input {
+  padding-top: 10%;
+  height: 80%;
+  width: 100%;
+}
+
+header {
+  font-size: 80%;
+  height: 20%;
+}
 
 figure {
   background-color: aliceblue;
@@ -48,9 +59,10 @@ figure:hover {
   box-shadow: 4px 4px 8px
 }
 
-header {
-  font-size: 80%;
-  height: 20%;
+img {
+  cursor: pointer;
+  height: 40%;
+  width: 25%;
 }
 
 #changeGame {
@@ -66,21 +78,14 @@ header {
   box-shadow: 4px 4px 8px
 }
 
-.user-input{
- 
-  height: 80%;
-  width: 100%;
-
+#fightScreen img {
+  padding-top: 25%;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 44%;
 }
 
-img {
- 
-  height: 30%;
- 
-}
-.spicy{
-    height: 30%;
-}
 .hidden {
   display: none;
 }
