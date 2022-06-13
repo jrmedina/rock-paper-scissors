@@ -15,13 +15,8 @@ class Game {
 
   // check for winner.....
   //if this.humans choice matches this.selections key, then check the value array to determine if the player wins... change the value of this.victory accordingly.
-  checkForDraw() {
-    if (this.human.choice === this.cpu.choice) 
-    return this.victory = ''
-  }
 
   checkForWinner() {
-    game.victory = ''
     if (this.human.choice === "rock" && (this.cpu.choice === "scissors" || this.cpu.choice === "lizard")) {
       return this.victory = 'human'
     } else if (this.human.choice === "paper" && (this.cpu.choice === "rock" || this.cpu.choice === "alien")) {
@@ -35,6 +30,10 @@ class Game {
     } else {
       return this.victory = 'comp'
     }
+  }
+    checkForDraw() {
+    if (this.human.choice === this.cpu.choice) 
+    return this.victory = ''
   }
 
   tallyWin() {

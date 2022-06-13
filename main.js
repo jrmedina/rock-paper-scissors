@@ -28,26 +28,26 @@ function runGame(event) {
     }
   }
   game.cpu.takeTurn()
-  game.checkForDraw()
   game.checkForWinner()
+  game.checkForDraw()
   game.tallyWin()
   displayWins()
-  setTimeout(reset, 4000)
+  setTimeout(reset, 3000)
 };
 
 function displayWins() {
   toggle(normalInput)
   humanWinCount.innerText = `Wins: ${game.human.wins}`
   computerWinCount.innerText = `Wins: ${game.cpu.wins}`
-  fightScreen.innerHTML = `<img id="${game.human.choice}" src="./assets/${game.human.choice}.png" alt="${game.human.choice}"></img>
-  <img id="${game.cpu.choice}" src="./assets/${game.cpu.choice}.png" alt="${game.cpu.choice}"></img>`
+  fightScreen.innerHTML = `<img src="./assets/${game.human.choice}.png" alt="${game.human.choice}"></img>
+  <img src="./assets/${game.cpu.choice}.png" alt="${game.cpu.choice}"></img>`
 
 
   if (game.victory === 'human') {
     return fighter.innerText = `U:${game.human.choice} beats C:${game.cpu.choice}`
   } else if (game.victory === 'comp') {
     return fighter.innerText = `U:${game.human.choice} loses to C:${game.cpu.choice}`
-  } else {
+  } else if (game.victory === ''){
     return fighter.innerText = `DRAWWWWWWW!`
   }
 
@@ -91,4 +91,8 @@ function generatePick(array) {
 
 function toggle(element) {
   element.classList.toggle('hidden')
+};
+
+function generatePick(array) {
+  return Math.floor(Math.random() * array.length);
 };
