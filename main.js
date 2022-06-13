@@ -1,4 +1,4 @@
-var game ;
+var game;
 var normal = ["rock", "paper", "scissors"]
 var spicy = ["rock", "paper", "scissors", "lizard", "alien"]
 
@@ -13,22 +13,26 @@ var fighter = document.querySelector('#header')
 
 window.addEventListener('load', loadGame)
 normalBtn.addEventListener('click', displayNorm)
-spicyBtn.addEventListener('click', spicyMode)
+spicyBtn.addEventListener('click', displaySpicy)
 changeBtn.addEventListener('click', home)
-userInput.addEventListener('click', startGame)
+userInput.addEventListener('click', runGame)
 
 function loadGame() {
   game = new Game()
 }
 
-function startGame(event){
-   for (var i = 0; i < spicy.length; i++){
-     if (spicy[i] === event.target.id){
-     game.human.choice = spicy[i]
+function runGame(event) {
+  for (var i = 0; i < spicy.length; i++) {
+    if (spicy[i] === event.target.id) {
+      game.human.choice = spicy[i]
     }
   }
   game.cpu.takeTurn()
+  game.checkForDraw()
+  game.checkForWinner()
+  game.tallyWin()
   displayWins()
+  setTimeout(reset, 4000)
 };
 
 function displayWins() {
@@ -38,23 +42,21 @@ function displayWins() {
   fightScreen.innerHTML = `<img id="${game.human.choice}" src="./assets/${game.human.choice}.png" alt="${game.human.choice}"></img>
   <img id="${game.cpu.choice}" src="./assets/${game.cpu.choice}.png" alt="${game.cpu.choice}"></img>`
 
-  
-  if(game.victory === 'human'){
-    game.human.wins++
-    fighter.innerText = `U:${game.human.choice} beats C:${game.cpu.choice}`
-  } else if (game.victory === 'comp'){
-    fighter.innerText = `U:${game.human.choice} loses to C:${game.cpu.choice}`
-    game.cpu.wins++
-  } else{
-    fighter.innerText = `DRAWWWWWWW!`
+
+  if (game.victory === 'human') {
+    return fighter.innerText = `U:${game.human.choice} beats C:${game.cpu.choice}`
+  } else if (game.victory === 'comp') {
+    return fighter.innerText = `U:${game.human.choice} loses to C:${game.cpu.choice}`
+  } else {
+    return fighter.innerText = `DRAWWWWWWW!`
   }
-  setTimeout(reset, 4000)
+
 }
 
-function reset(){
-fighter.innerText = `Choose Your Fighter!`
-fightScreen.innerHTML = ``
-toggle(normalInput)
+function reset() {
+  fighter.innerText = `Choose Your Fighter!`
+  fightScreen.innerHTML = ``
+  toggle(normalInput)
 }
 
 function home() {
@@ -73,16 +75,15 @@ function displayNorm() {
   toggle(normalInput)
 }
 
-function spicyMode() {
+function displaySpicy() {
   game.gameType = "spicy"
   fighter.innerText = `Choose Your Fighter!`
   toggle(spicyBtn)
   toggle(normalBtn)
   toggle(changeBtn)
   toggle(normalInput)
-  toggle(spicyOptions) 
+  toggle(spicyOptions)
 }
-
 
 function generatePick(array) {
   return Math.floor(Math.random() * array.length);
