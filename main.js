@@ -32,11 +32,12 @@ function runGame(event) {
   game.checkForDraw()
   game.tallyWin()
   displayFight()
-  setTimeout(reset, 3000)
+  setTimeout(reset, 2000)
 }
 
 function displayFight() {
-  toggle(userInput)
+  hide(userInput)
+  hide(changeBtn)
   humanWinCount.innerText = `Wins: ${game.human.wins}`
   computerWinCount.innerText = `Wins: ${game.cpu.wins}`
   fightScreen.innerHTML =
@@ -46,7 +47,7 @@ function displayFight() {
     return header.innerText = `${game.human.choice} beats ${game.cpu.choice}...`
   } else if (game.winner === `cpu`) {
     return header.innerText = `${game.human.choice} loses to ${game.cpu.choice}...`
-  } else if (game.winner === ``){
+  } else if (game.winner === ``) {
     return header.innerText = `DRAW! Try Again?`
   }
 }
@@ -54,39 +55,45 @@ function displayFight() {
 function reset() {
   header.innerText = `Choose Your Fighter!`
   fightScreen.innerHTML = ``
-  toggle(userInput)
+  show(userInput)
+  show(changeBtn)
 }
 
-function displayHome () {
-  toggle(spicyBtn)
-  toggle(normalBtn)
-  toggle(changeBtn)
-  toggle(userInput)
+function displayHome() {
+  show(spicyBtn)
+  show(normalBtn)
+  hide(changeBtn)
+  hide(userInput)
 }
 
 function displayNorm() {
   game.gameType = `normal`
   header.innerText = `Choose Your Fighter!`
-  toggle(spicyBtn)
-  toggle(normalBtn)
-  toggle(changeBtn)
-  toggle(userInput)
+  hide(spicyBtn)
+  hide(normalBtn)
+  hide(spicyOptions)
+  show(changeBtn)
+  show(userInput)
 }
 
 function displaySpicy() {
   game.gameType = `spicy`
   header.innerText = `Choose Your Fighter!`
-  toggle(spicyBtn)
-  toggle(normalBtn)
-  toggle(changeBtn)
-  toggle(userInput)
-  toggle(spicyOptions)
+  hide(spicyBtn)
+  hide(normalBtn)
+  show(changeBtn)
+  show(userInput)
+  show(spicyOptions)
 }
 
 function generatePick(array) {
   return Math.floor(Math.random() * array.length);
 }
 
-function toggle(element) {
-  element.classList.toggle(`hidden`)
+function hide(element) {
+  element.classList.add(`hidden`)
+}
+
+function show(element) {
+  element.classList.remove(`hidden`)
 }
