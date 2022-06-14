@@ -8,6 +8,9 @@
 - [LinkedIn](https://www.linkedin.com/in/joshua-medina/)
 - [Github](https://github.com/jrmedina)
 
+## Walkthrough
+https://user-images.githubusercontent.com/102757890/173673006-227cc764-bf30-4473-8136-c91f4223bb5d.mp4
+
 ## Objective
 Using HTML, CSS, and JavaScript create two versions of the game Rock, Paper Scissors. 
 Each game model should be able to generate a random pick assigned to a computer. 

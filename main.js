@@ -41,7 +41,7 @@ function displayFight() {
   humanWinCount.innerText = `Wins: ${game.human.wins}`
   computerWinCount.innerText = `Wins: ${game.cpu.wins}`
   fightScreen.innerHTML =
-    `<img src="./assets/${game.human.choice}.png" alt="${game.human.choice}"></img>
+    `<img src="./assets/${game.human.choice}.png" alt="${game.human.choice}"></img> VS.
     <img src="./assets/${game.cpu.choice}.png" alt="${game.cpu.choice}"></img>`
   if (game.winner === `human`) {
     return header.innerText = `${game.human.choice} beats ${game.cpu.choice}...`
