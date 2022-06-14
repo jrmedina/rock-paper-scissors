@@ -67,7 +67,7 @@ function displayHome() {
 }
 
 function displayNorm() {
-  game.gameType = `normal`
+  game.setNormal()
   header.innerText = `Choose Your Fighter!`
   hide(spicyBtn)
   hide(normalBtn)
@@ -77,7 +77,7 @@ function displayNorm() {
 }
 
 function displaySpicy() {
-  game.gameType = `spicy`
+  game.setSpicy()
   header.innerText = `Choose Your Fighter!`
   hide(spicyBtn)
   hide(normalBtn)

@@ -6,11 +6,19 @@ class Game {
     this.winner = ``
   }
 
+  setNormal() {
+    this.gameType = `normal`
+  }
+
+  setSpicy() {
+  this.gameType = `spicy`
+  }
+
   checkForWinner() {
     if (this.human.choice === `rock` && (this.cpu.choice === `scissors` || this.cpu.choice === `lizard`)) {
       return this.winner = `human`
     } else if (this.human.choice === `paper` && (this.cpu.choice === `rock` || this.cpu.choice === `alien`)) {
-      return this.winner = 'human'
+      return this.winner = `human`
     } else if (this.human.choice === "scissors" && (this.cpu.choice === `paper` || this.cpu.choice === `lizard`)) {
       return this.winner = `human`
     } else if (this.human.choice === `lizard` && (this.cpu.choice === `paper` || this.cpu.choice === `alien`)) {

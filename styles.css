@@ -7,12 +7,12 @@ body {
   color: white
 }
 
-.human-side {
+.center {
+  width: 65%;
   text-align: center;
-  width: 20%;
-  justify-content: left;
-  font-size: 35px;
-  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .computer-side {
@@ -23,18 +23,38 @@ body {
   border-radius: 5%;
 }
 
-.center {
-  width: 65%;
+.human-side {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 20%;
+  justify-content: left;
+  font-size: 35px;
+  border-radius: 5%;
+}
+
+.token {
+  height: 15%;
+  width: 40%;
 }
 
 .user-input {
   padding-top: 10%;
   height: 90%;
   width: 80%;
+}
+
+figure {
+  border-top: 5%;
+  border: 1px solid white;
+  width: 30%;
+  height: 30%;
+  border-radius: 17%;
+  font-size: 50%;
+  cursor: pointer;
+}
+
+figure:hover {
+  box-shadow: 10px 5px 20px;
+  border: none
 }
 
 h1 span {
@@ -61,32 +81,11 @@ h1 span {
   }
 }
 
-figure {
-  border-top: 5%;
-  border: 1px solid white;
-  width: 30%;
-  height: 30%;
-  border-radius: 17%;
-  font-size: 50%;
-  cursor: pointer;
-}
-
-figure:hover {
-  box-shadow: 10px 5px 20px;
-  border: none
-}
-
 img {
   cursor: pointer;
   height: 40%;
   width: 25%;
 }
-
-#token {
-height: 15%;
-width: 40%;
-}
-
 
 #changeGame {
   margin-top: 10%;
