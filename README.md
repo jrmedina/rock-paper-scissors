@@ -1,7 +1,7 @@
 # Rock, Paper, Scissors
 
 ## Deployed URL
- - TBD
+ https://jrmedina.github.io/rock-paper-scissors/
 
 ## Contributor(s)
 **Joshua Medina**
